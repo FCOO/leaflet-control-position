@@ -1,0 +1,25 @@
+{
+  "name": "leaflet-control-position",
+  "main": "leaflet-control-position.js",
+  "version": "0.1.0",
+  "authors": [
+    "Jesper Baasch-Larsen <jla@fcoo.dk>"
+  ],
+  "description": "Leaflet control for zooming to a specified position",
+  "moduleType": [
+    "es6"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "magellan": "https://github.com/dbarbalato/magellan.git#master",
+    "noty": "~2.3.4"
+  }
+}
