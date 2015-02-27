@@ -1,0 +1,13 @@
+{
+  "name": "magellan",
+  "homepage": "https://github.com/dbarbalato/magellan",
+  "_release": "a0ba556cbf",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "a0ba556cbf700a89ea61dd030ca2371ed7c84f7e"
+  },
+  "_source": "https://github.com/dbarbalato/magellan.git",
+  "_target": "master",
+  "_originalSource": "https://github.com/dbarbalato/magellan.git"
+}
