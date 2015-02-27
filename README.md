@@ -12,7 +12,9 @@ http://jblarsen.github.io/leaflet-control-position/
 Leaflet, Magellan and noty (easy to rip out).
 
 http://leafletjs.com/
+
 https://github.com/dbarbalato/magellan/
+
 http://ned.im/noty/
 
 ## Usage
