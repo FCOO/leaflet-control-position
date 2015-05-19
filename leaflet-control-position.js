@@ -1,69 +1,69 @@
 if (typeof console == "undefined") {
-	this.console = { log: function (msg) { /* do nothing since it would otherwise break IE */} };
+    this.console = { log: function (msg) { /* do nothing since it would otherwise break IE */} };
 }
 
 L.Control.Position = L.Control.extend({
-	options: {
-		collapsed: true,
-		position: 'topleft',
-		text: 'Zoom to (lon, lat) position',
-		bounds: null, // L.LatLngBounds
-	},
+    options: {
+        collapsed: true,
+        position: 'topleft',
+        text: 'Zoom to (lat, lon) position',
+        bounds: null, // L.LatLngBounds
+    },
 
-	initialize: function (options) {
-		L.Util.setOptions(this, options);
-	},
+    initialize: function (options) {
+        L.Util.setOptions(this, options);
+    },
 
-	onAdd: function (map) {
-		this._map = map;
+    onAdd: function (map) {
+        this._map = map;
 
-		var className = 'leaflet-control-position',
-		container = this._container = L.DomUtil.create('div', className);
+        var className = 'leaflet-control-position',
+        container = this._container = L.DomUtil.create('div', className);
 
-		L.DomEvent.disableClickPropagation(container);
+        L.DomEvent.disableClickPropagation(container);
 
-		var form = this._form = L.DomUtil.create('form', className + '-form');
+        var form = this._form = L.DomUtil.create('form', className + '-form');
 
-		var input_lon = this._input_lon = document.createElement('input');
-                input_lon.className = className + '-form-input-lon';
-		input_lon.name = "lon";
-		input_lon.type = "text";
-                input_lon.placeholder = "Longitude";
-		var input_lat = this._input_lat = document.createElement('input');
-                input_lat.className = className + '-form-input-lat';
-		input_lat.type = "text";
-		input_lat.name = "lat";
-                input_lat.placeholder = "Latitude";
+        var input_lon = this._input_lon = document.createElement('input');
+        input_lon.className = className + '-form-input-lon';
+        input_lon.name = "lon";
+        input_lon.type = "text";
+        input_lon.placeholder = "Longitude";
+        var input_lat = this._input_lat = document.createElement('input');
+        input_lat.className = className + '-form-input-lat';
+        input_lat.type = "text";
+        input_lat.name = "lat";
+        input_lat.placeholder = "Latitude";
 
-		var submit = document.createElement('input');
-		submit.type = "submit";
-		submit.value = this.options.text;
+        var submit = document.createElement('input');
+        submit.type = "submit";
+        submit.value = this.options.text;
 
-		form.appendChild(input_lon);
-		form.appendChild(input_lat);
-		form.appendChild(submit);
+        form.appendChild(input_lat);
+        form.appendChild(input_lon);
+        form.appendChild(submit);
 
-		L.DomEvent.addListener(form, 'submit', this._position, this);
+        L.DomEvent.addListener(form, 'submit', this._position, this);
 
-		if (this.options.collapsed) {
-			L.DomEvent.addListener(container, 'mouseover', this._expand, this);
-			L.DomEvent.addListener(container, 'mouseout', this._collapse, this);
+        if (this.options.collapsed) {
+            L.DomEvent.addListener(container, 'mouseover', this._expand, this);
+            L.DomEvent.addListener(container, 'mouseout', this._collapse, this);
 
-			var link = this._layersLink = L.DomUtil.create('a', className + '-toggle', container);
-			link.href = '#';
-			link.title = 'Input longitude and latitude';
+            var link = this._layersLink = L.DomUtil.create('a', className + '-toggle', container);
+            link.href = '#';
+            link.title = 'Input latitude and longitude';
 
-			L.DomEvent.addListener(link, L.Browser.touch ? 'click' : 'focus', this._expand, this);
+            L.DomEvent.addListener(link, L.Browser.touch ? 'click' : 'focus', this._expand, this);
 
-			this._map.on('movestart', this._collapse, this);
-		} else {
-			this._expand();
-		}
+            this._map.on('movestart', this._collapse, this);
+        } else {
+            this._expand();
+        }
 
-		container.appendChild(form);
+        container.appendChild(form);
 
-		return container;
-	},
+        return container;
+    },
     
     _position : function (event) {
         L.DomEvent.preventDefault(event);
