@@ -2,7 +2,6 @@ if (typeof console == "undefined") {
 	this.console = { log: function (msg) { /* do nothing since it would otherwise break IE */} };
 }
 
-
 L.Control.Position = L.Control.extend({
 	options: {
 		collapsed: true,
