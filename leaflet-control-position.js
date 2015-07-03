@@ -94,9 +94,19 @@ L.Control.Position = L.Control.extend({
         _remove_marker = function(arg) {
             this._map.removeLayer(arg.target);
         }
-        this._marker = L.marker()
+        if (this._marker !== undefined) {
+            this._map.removeLayer(this._marker);
+        }
+        this._marker = L.circleMarker([lat, lon], {
+            color: '#136AEC',
+            fillColor: '#2A93EE',
+            fillOpacity: 0.7,
+            weight: 2,
+            opacity: 0.9,
+            radius: 5
+        });
         this._marker.on('click', _remove_marker);
-        this._marker.setLatLng([lat, lon]).addTo(this._map);
+        this._marker.addTo(this._map);
     },
 
      _expand: function () {
