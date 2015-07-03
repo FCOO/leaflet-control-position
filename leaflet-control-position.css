@@ -18,7 +18,11 @@ input::-webkit-inner-spin-button {
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
-.leaflet-control-position a {
+.icon-target {
+    font-size: 18px;
+}
+
+.leaflet-control-position div {
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
 	display: block;
@@ -30,17 +34,18 @@ input::-webkit-inner-spin-button {
 	border-radius: 4px;
 }
 
-.leaflet-control-position a {
+.leaflet-control-position-icon div {
 	background-image: url(images/position.png);
 	width: 26px;
 	height: 26px;
 }
 
-.leaflet-touch .leaflet-control-position a {
+.leaflet-touch .leaflet-control-position div {
 	width: 36px;
 	height: 36px;
 }
 
+.leaflet-control-position-expanded .icon-target,
 .leaflet-control-position .leaflet-control-position-form,
 .leaflet-control-position-expanded .leaflet-control-position-toggle {
 	display: none;

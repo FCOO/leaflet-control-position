@@ -8,6 +8,7 @@ L.Control.Position = L.Control.extend({
         position: 'topleft',
         text: 'Zoom to (lat, lon) position',
         bounds: null, // L.LatLngBounds
+        icon: 'leaflet-control-position-icon'
     },
 
     initialize: function (options) {
@@ -18,7 +19,8 @@ L.Control.Position = L.Control.extend({
         this._map = map;
 
         var className = 'leaflet-control-position',
-        container = this._container = L.DomUtil.create('div', className);
+            container = this._container = L.DomUtil.create('div', className);
+            //container = this._container = L.DomUtil.create('div', 'leaflet-bar ' + className);
 
         L.DomEvent.disableClickPropagation(container);
 
@@ -49,11 +51,10 @@ L.Control.Position = L.Control.extend({
             L.DomEvent.addListener(container, 'mouseover', this._expand, this);
             L.DomEvent.addListener(container, 'mouseout', this._collapse, this);
 
-            var link = this._layersLink = L.DomUtil.create('a', className + '-toggle', container);
-            link.href = '#';
-            link.title = 'Input latitude and longitude';
+            var button = this._layersButton = L.DomUtil.create('div', className + ' ' + this.options.icon, container);
+            button.title = 'Input latitude and longitude';
 
-            L.DomEvent.addListener(link, L.Browser.touch ? 'click' : 'focus', this._expand, this);
+            L.DomEvent.addListener(button, L.Browser.touch ? 'click' : 'focus', this._expand, this);
 
             this._map.on('movestart', this._collapse, this);
         } else {
@@ -100,6 +101,7 @@ L.Control.Position = L.Control.extend({
 
      _expand: function () {
           L.DomUtil.addClass(this._container, 'leaflet-control-position-expanded');
+          //this._layersLink.className = this._layersLink.className.replace(' ' + this.options.icon, '');
      },
 
      _collapse: function () {
