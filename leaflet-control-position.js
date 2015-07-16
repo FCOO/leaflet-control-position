@@ -76,7 +76,7 @@ L.Control.Position = L.Control.extend({
             lon = parseFloat(lon.toDD());
         } catch(err) {
             console.log(err);
-            var n = noty({text: err.message, type: "error"});
+            var n = noty({text: err.message, type: "error", timeout: 3500});
             throw err;
         }
         try {
@@ -87,7 +87,7 @@ L.Control.Position = L.Control.extend({
             lat = parseFloat(lat.toDD());
         } catch(err) {
             console.log(err);
-            var n = noty({text: err.message, type: "error"});
+            var n = noty({text: err.message, type: "error", timeout: 3500});
             throw err;
         }
         this._map.panTo([lat, lon]);
