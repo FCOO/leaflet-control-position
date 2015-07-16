@@ -30,12 +30,12 @@ L.Control.Position = L.Control.extend({
         input_lon.className = className + '-form-input-lon';
         input_lon.name = "lon";
         input_lon.type = "text";
-        input_lon.placeholder = "Long. (ddd mm ss.sss W/E)";
+        input_lon.placeholder = "Lon (ddd mm ss.sss W/E)";
         var input_lat = this._input_lat = document.createElement('input');
         input_lat.className = className + '-form-input-lat';
         input_lat.type = "text";
         input_lat.name = "lat";
-        input_lat.placeholder = "Lat. (dd mm ss.sss N/S)";
+        input_lat.placeholder = "Lat (dd mm ss.sss N/S)";
 
         var submit = document.createElement('input');
         submit.type = "submit";
