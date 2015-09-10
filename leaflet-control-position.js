@@ -51,7 +51,7 @@ L.Control.Position = L.Control.extend({
             L.DomEvent.addListener(container, 'mouseover', this._expand, this);
             L.DomEvent.addListener(container, 'mouseout', this._collapse, this);
 
-            var button = this._layersButton = L.DomUtil.create('div', className + ' ' + this.options.icon, container);
+            var button = this._layersButton = L.DomUtil.create('a', className + ' ' + this.options.icon, container);
             button.title = 'Input latitude and longitude';
 
             L.DomEvent.addListener(button, L.Browser.touch ? 'click' : 'focus', this._expand, this);
