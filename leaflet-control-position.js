@@ -8,19 +8,21 @@ L.Control.Position = L.Control.extend({
         position: 'topleft',
         text: 'Zoom to (lat, lon) position',
         bounds: null, // L.LatLngBounds
+        className: 'leaflet-control-position',
         icon: 'leaflet-control-position-icon'
     },
 
     initialize: function (options) {
         L.Util.setOptions(this, options);
+        this._container = L.DomUtil.create('div', this.options.className);
+        //this._container = L.DomUtil.create('div', 'leaflet-bar ' + className);
     },
 
     onAdd: function (map) {
         this._map = map;
 
-        var className = 'leaflet-control-position',
-            container = this._container = L.DomUtil.create('div', className);
-            //container = this._container = L.DomUtil.create('div', 'leaflet-bar ' + className);
+        var className = this.options.className;
+        var container = this._container;
 
         L.DomEvent.disableClickPropagation(container);
 
