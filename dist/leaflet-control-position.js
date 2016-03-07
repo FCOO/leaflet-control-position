@@ -16,7 +16,7 @@
 
 	L.Control.Position = L.Control.extend({
     options: {
-			VERSION: "{VERSION}",
+			VERSION: "0.1.1",
       collapsed: true,
       position: 'topleft',
       text: 'Zoom to (lat, lon) position',
