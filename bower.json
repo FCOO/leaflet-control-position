@@ -1,16 +1,31 @@
 {
   "name": "leaflet-control-position",
-  "main": "leaflet-control-position.js",
   "version": "0.1.0",
+  "homepage": "https://github.com/FCOO/leaflet-control-position",
   "authors": [
-    "Jesper Baasch-Larsen <jla@fcoo.dk>"
+    "Jesper Larsen jla@fcoo.dk"
   ],
   "description": "Leaflet control for zooming to a specified position",
-  "moduleType": [
-    "es6"
+  "main": [
+    "dist/leaflet-control-position.min.js",
+    "dist/leaflet-control-position.min.css"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/FCOO/leaflet-control-position.git"
+  },
+  "dependencies": {
+    "leaflet": "latest",
+    "magellan": "https://github.com/dbarbalato/magellan.git#master",
+    "noty": "latest",
+    "jquery": "latest"
+  },
+  "devDependencies": {
+    "bourbon": "latest",
+    "modernizr-mixin": "latest",
+    "mathsass": "latest"
+  },
   "license": "MIT",
-  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
@@ -18,8 +33,7 @@
     "test",
     "tests"
   ],
-  "dependencies": {
-    "magellan": "https://github.com/dbarbalato/magellan.git#master",
-    "noty": "~2.3.4"
-  }
+  "moduleType": [
+    "es6"
+  ]
 }

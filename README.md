@@ -1,27 +1,51 @@
 # leaflet-control-position
-Leaflet control for zooming and panning to a lat/lon 
-position input in two text boxes. You can use the 
-lat/lon formats supported by:
+>
 
+
+## Description
+Leaflet control for zooming and panning to a lat/lon position input in two text boxes. 
+
+You can use the lat/lon formats supported by:
 https://github.com/dbarbalato/magellan/
+
+
+## Installation
+### bower
+`bower install https://github.com/FCOO/leaflet-control-position.git --save`
 
 ## Demo
-http://jblarsen.github.io/leaflet-control-position/
-
-## Requirements
-Leaflet, Magellan and noty (easy to rip out).
-
-http://leafletjs.com/
-
-https://github.com/dbarbalato/magellan/
-
-http://ned.im/noty/
+http://FCOO.github.io/leaflet-control-position/demo/ 
 
 ## Usage
-Install the dependencies and include the Javascript and CSS
-file in this repository in your application (note that the 
-CSS file uses an image from the images directory):
 
-You can then just add the control to your Leaflet map:
+You can just add the control to your Leaflet map:
 
-        map.addControl(new L.Control.Position);
+	map.addControl(new L.Control.Position);
+
+
+### options
+
+### Methods
+
+
+## Copyright and License
+This plugin is licensed under the [MIT license](https://github.com/FCOO/leaflet-control-position/LICENSE).
+
+Copyright (c) 2015 [FCOO](https://github.com/FCOO)
+
+## Contact information
+
+Jesper Larsen jla@fcoo.dk
+
+
+## Credits and acknowledgements
+
+
+## Known bugs
+
+## Troubleshooting
+
+## Changelog
+
+
+
