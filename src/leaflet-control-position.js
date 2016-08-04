@@ -90,9 +90,7 @@ https://github.com/FCOO
                 }
                 lon = parseFloat(lon.toDD());
             } catch(err) {
-                console.log(err);
                 n = window.noty({text: err.message, type: "error", timeout: 3500});
-                throw err;
             }
 
             try {
@@ -102,9 +100,7 @@ https://github.com/FCOO
                 }
                 lat = parseFloat(lat.toDD());
             } catch(err) {
-                console.log(err);
                 n = window.noty({text: err.message, type: "error", timeout: 3500});
-                throw err;
             }
             this._map.panTo([lat, lon]);
 
