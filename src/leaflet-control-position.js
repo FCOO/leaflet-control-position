@@ -89,11 +89,6 @@ https://github.com/FCOO
                     throw new Error('Invalid longitude.');
                 }
                 lon = parseFloat(lon.toDD());
-            } catch(err) {
-                n = window.noty({text: err.message, type: "error", timeout: 3500});
-            }
-
-            try {
                 lat = window.magellan(this._input_lat.value).latitude();
                 if (lat === null) {
                     throw new Error('Invalid latitude.');
@@ -101,6 +96,7 @@ https://github.com/FCOO
                 lat = parseFloat(lat.toDD());
             } catch(err) {
                 n = window.noty({text: err.message, type: "error", timeout: 3500});
+                return;
             }
             this._map.panTo([lat, lon]);
 
