@@ -7,7 +7,7 @@ https://github.com/FCOO/leaflet-control-position
 https://github.com/FCOO
 
 ****************************************************************************/
-;(function (L, window, document, undefined) {
+(function (L, window, document, undefined) {
     "use strict";
 
     if (typeof console == "undefined") {
@@ -81,7 +81,7 @@ https://github.com/FCOO
         },
 
         _position : function (event) {
-            var n, lon, lat;
+            var lon, lat;
             L.DomEvent.preventDefault(event);
             try {
                 lon = window.magellan(this._input_lon.value).longitude();
@@ -95,7 +95,7 @@ https://github.com/FCOO
                 }
                 lat = parseFloat(lat.toDD());
             } catch(err) {
-                n = window.noty({text: err.message, type: "error", timeout: 3500});
+                window.noty({text: err.message, type: "error", timeout: 3500});
                 return;
             }
             this._map.panTo([lat, lon]);
